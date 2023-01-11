@@ -12,14 +12,14 @@ namespace TestingApp.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
 
-            if (Session["user_info"] == null)
+            if (Session["user_info"] == null) //check if user is already login or not
             {
-                TempData["error"] = "Please login to continue";
+                TempData["error"] = "Please login to continue"; 
                 filterContext.Result = RedirectToAction("LoginPage", "Login", new { area = "" });
             }
-            else
+            else 
             {
-                //ViewBag.CurrentController = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
+                ViewBag.CurrentController = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
             }
         }
     }
