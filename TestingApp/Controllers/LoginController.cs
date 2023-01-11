@@ -17,7 +17,7 @@ namespace TestingApp.Controllers
             return View();
         }
         [AllowAnonymous]
-        public ActionResult LoginPage()
+        public ActionResult LoginPage() //default login page
         {
             return View();
         }
